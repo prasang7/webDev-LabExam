@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Javascript Test</title>
+	<script type="text/javascript" src="external.js"></script>
+
+	<script type="text/javascript">
+
+	// Object Javascript functions!
+
+	function createObjects() {
+		var car = {type: "SUV", model: "500", color: "white"};
+
+		//print value of some object.property
+		document.getElementById("obj_disp").innerHTML = car.type;
+	}
+
+	function createObjectsFunctions() {
+		var car = {
+			carName : function() {
+				document.getElementById("obj_disp").innerHTML = "MahindraXUV";			
+			}
+		};
+
+		//call function of an object
+		car.carName();
+	}
+
+	// Array Javascript functions!
+
+	function createArray() {
+		var bike = ["a", "b", "c"];
+		var numm = [ 1, 7, 11];
+
+		document.getElementById("array_disp").innerHTML = bike[0] + " " + numm[1];
+	}
+
+	// Basic Javascript functions!
+
+	function loopShow() {
+		var hey = "hey! ";
+		for (var i = 0; i <= 10; i++) {
+			hey = hey + "Hey! ";
+			if (i == 7) {
+				break;
+			}
+		}
+		document.getElementById("disp").innerHTML = hey;
+	}
+
+	function typeOfShow(data){
+		if (typeof data == "string") {
+			document.getElementById("disp").innerHTML = "data is string";		
+		}
+		else if(typeof data == "number"){
+			document.getElementById("disp").innerHTML = "data is number";	
+		}
+		else {
+			document.getElementById("disp").innerHTML = "typeof not found";	
+		}
+	}
+
+	function alertMe() {
+		alert("wtf man!");
+	}
+
+	function getConfirmation(){
+		var retVal = confirm("Do you want to continue ?"); 
+		if( retVal == true ){
+			document.getElementById("disp").innerHTML = "true";
+			return true;
+		}
+		else{
+			document.getElementById("disp").innerHTML = "false";
+       		return false;
+   		}
+	}
+
+	function promptMe() {
+		var retValue = prompt("Enter your name: ", "default value");
+		document.getElementById("disp").innerHTML = retValue;
+	}
+
+	function helloWorld() {
+		document.getElementById("disp").innerHTML = "Hello World!" + "<br>" + "Wassup!";	
+	}
+
+	</script>
+
+</head>
+
+<body>
+	<div id="basic_js">
+		<div id="basic_js_buttons">
+			<input type="button" value="hello world!" onclick="helloWorld()"/>
+			<input type="button" value="external JS" onclick="sayHello()"/>
+			<input type="button" value="typeof" onclick="typeOfShow('prasang sharma')"/>
+			<input type="button" value="loopShow" onclick="loopShow()"/>
+			<input type="button" value="alert" onclick="alertMe()"/>
+			<input type="button" value="confirmation" onclick="getConfirmation()"/>	
+			<input type="button" value="promptMe" onclick="promptMe()"/>	
+		</div>
+		<div id="bsic_js_disp">
+			<h1 id="disp">Default</h1>
+		</div>
+		<hr>		
+	</div>
+
+	<div id="objects_js">
+		<div id="objects_js_buttons">
+			<input type="button" value="print object.property" onclick="createObjects()"/>
+			<input type="button" value="call object.function!" onclick="createObjectsFunctions()"/>
+		</div>
+		<div>
+			<h1 id="obj_disp">Default</h1>
+		</div>
+		<hr>
+	</div>
+
+	<div id="array_js">
+		<div id="array_js_buttons">
+			<input type="button" value="basic array" onclick="createArray()"/>
+		</div>
+		<div>
+			<h1 id="array_disp">Default</h1>
+		</div>
+	</div>
+
+</body>
+
+</html>
